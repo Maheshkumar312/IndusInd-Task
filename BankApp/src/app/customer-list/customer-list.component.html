@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>CifNumber</th>
+            <th> First Name</th>
+            <th> Last Name </th>
+            <th>Account Number</th>
+            <th> Mobile Number </th>
+            <th> EmailId </th>
+            <th> Mpin</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+
+            <td> {{ customer.cif_number }} </td>
+            <td> {{ customer.firstName }} </td>
+            <td> {{ customer.lastName }} </td>
+            <td>{{customer.account.accountNumber}}</td>
+            <td> {{ customer.mobileNumber }} </td>
+            <td> {{ customer.emailId}} </td>
+            <td>{{customer.mpin}}</td>
+            <td>
+                <button (click)="updateCustomer(customer.cif_number)" class="btn btn-info"> Update</button>
+                <button (click)="deleteCustomer(customer.cif_number)" class="btn btn-danger"> Delete</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
